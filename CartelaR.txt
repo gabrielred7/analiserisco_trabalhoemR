@@ -1,0 +1,109 @@
+Cartela R 
+Prof. Eber – Análise de Risco  
+
+I- Geração de vetores 
+1- x <- 1:100 
+2- x<-seq (from=1, to=100, by=1) 
+3- y<-rep (x,n=2) 
+4- z<-c(“red”,”blue”,”green”) 
+
+II- Operadores aritméticos
+| Aritméticos |           | Relacionais |   |
+|-------------|-----------|-------------|---|
+| +           |           | ==          |   |
+| -           |           | !=          |   |
+| *           |           | >,>=        |   |
+| /           |           | <,<=        |   |
+| %/%         | quociente |             |   |
+| %%          | módulo    |             |   |
+| ^           |           |             |   |
+
+III- Criação de vetores, matrizes e listas 
+1- x <- vector (length=100) 
+2- y <- matrix (data, nrow=10, ncol=5) 
+3- z <- list (x,y) 
+
+IV - Funções aritméticas aplicadas a um vetor 
+| sum(x)  |   | mean(x) |   |
+| prod(x) |   | sd(x)   |   |
+| exp(x)  |   | var(x)  |   |
+| log(x)  |   |         |   |
+| sqrt(x) |   |         |   |
+|         |   |         |   |
+|         |   |         |   |
+| diff(x) |   |         |   |
+
+V- Inspeção de objetos
+str(x)     | estrutura de dados de x
+summary(x) | resumo estatístico
+head(x)    | primeiros elementos
+tail(x)    | últimos elementos
+
+VI-Diretório / Workspace 
+| getwd()   | diretório corrente              |
+| setwd (x) | posiciona diretório             |
+| dir()     | lista diretório                 |
+| ls()      | lista objetos do workspace (WS) |
+| Rm(x)     | remove objeto do WS             |
+| source(x) | compila e carrega x no WS       |
+
+VIII-Gráficos  
+1-hist(x) 
+Desenha o histograma (frequências relativas) do vetor x 
+Retorna um objeto tipo hist que contém todas informações de x  
+
+2-ecdf(x) 
+Retorna um objeto com a função de probabilidade empírica cumulativa de x, que pode ser  plotado diretamente 
+
+3-plot(X,Y) 
+Função genérica de desenho do R 
+X: vetor do eixo das ordenadas; Y:idem eixo das abcissas. 
+
+3.1 - plot padrão 
+    x.vals = seq(-1, 2, length = 20) 
+    y.vals = 1 - x.vals 
+    plot(x.vals, y.vals, type="l", col="blue", lwd=2) 
+    abline(a=0.5,b=-0.5, lwd=2) # y=ax+b 
+    abline(v=1) 
+    abline(h=0) 
+3.2-plotando vários gráficos no mesmo desenho com matplot 
+    x1 <- seq(-2, 2, 0.05) 
+    y1 <- pnorm(x1) 
+    y2 <- pnorm(x1,1,1) 
+    matplot(x1, cbind(y1,y2),type="l",col=c("red","green"),lty=c(1,1)) 
+3.3-boxplot: visualizar quartis, mediana e outliers 
+    x1 <- seq (-2, 2, 0.05) 
+    y1 <- pnorm (x1) 
+    y2 <- pnorm (x1,1,1) 
+    y<-cbind (y1,y2) 
+    boxplot(y)
+4-qqnorm(y): verificar visualmente a “normalidade” 
+    y<- rnorm(500,5,1) 
+    qqnorm(y) #plot qq entre y e a normal teórica 
+    qqline(y) #plota reta do match perfeito 
+
+IX- Funções de probabilidades 
+unif (min,max)
+binom(n,p)
+rorm (mu,sigma)
+triangle(min,max,mod
+
+X- Comandos 
+1- if (cond){com} 
+2- if (cond) {com1} else {com2} 
+3- for (index in seq){com} 
+
+XI- Ordenação 
+1- sort(x) 
+2- order(x) 
+
+XII- Subsetting 
+1- X[a:b] 
+2- X[x relop y] 
+
+XIII- Operações em conjuntos 
+1- union(x,y) 
+2- setdiff(x,y) 
+
+XIV- apply 
+1- apply(m,i,function) onde i=1 linhas, i=2, colunas
