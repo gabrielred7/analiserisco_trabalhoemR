@@ -105,7 +105,7 @@ q3 <- function() {
   text(atividades$DMedio, atividades$CMedio, labels = atividades$Atividade, pos = 3)
 
   # Adicionar linha de tendência (correlação)
-  correlation <- cor(atividades$DMedio, atividades$CMedio)
+  correlation <- A(atividades$DMedio, atividades$CMedio)
   abline(lm(atividades$CMedio ~ atividades$DMedio), col = "red")
   legend("topright", legend = paste("Correlação =", round(correlation, 2)), col = "red", bty = "n")
 }
